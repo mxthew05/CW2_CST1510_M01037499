@@ -12,11 +12,11 @@ A command-line authentication system implementing secure password hashing with b
 - User registration with duplicate username prevention
 - Secure user login with password verification
 - Strong input validation for usernames and passwords
-- File-based user data persistence (`Requirements.txt`)
+- File-based user data persistence (`users.txt`)
 
 ## Technical Implementation
 - Hashing Algorithm: bcrypt with automatic salting
-- Data Storage: Plain text file (`Requirements.txt`) with comma-separated values
+- Data Storage: Plain text file (`users.txt`) with comma-separated values
 - Password Security: One-way hashing, no plaintext storage
 - Validation: 
   - Username → 3-20 alphanumeric characters
