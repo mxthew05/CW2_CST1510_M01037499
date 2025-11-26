@@ -1,23 +1,29 @@
-# Week 7: Secure Authentication System
+# Week 8: Data Pipeline & CRUD (SQL) – CST1510 CW2
 
-**Student Name:** Mathew Kiliba  
-**Student ID:** M01037499 
-**Course:** CST1510 - CW2 - Multi-Domain Intelligence Platform 
+**Student Name:** [Your Full Name]  
+**Student ID:**   [Your Student ID]  
+**Course:**      CST1510 – Multi-Domain Intelligence Platform
 
-## Project Description
-A command-line authentication system implementing secure password hashing with bcrypt. This week focuses on secure user registration and login using a text file backend.
+## Project Status: WEEK 8 COMPLETE
 
-## Features
-- Secure password hashing using bcrypt with automatic salt generation
-- User registration with duplicate username prevention
-- Secure user login with password verification
-- Strong input validation for usernames and passwords
-- File-based user data persistence (`users.txt`)
+Successfully migrated from file-based storage to a full **SQLite database** with secure authentication and complete data pipeline.
 
-## Technical Implementation
-- Hashing Algorithm: bcrypt with automatic salting
-- Data Storage: Plain text file (`users.txt`) with comma-separated values
-- Password Security: One-way hashing, no plaintext storage
-- Validation: 
-  - Username → 3-20 alphanumeric characters
-  - Password → 6-50 characters
+### Features Implemented
+- User migration from `users.txt` → SQLite with bcrypt hashing
+- Four domain tables created:
+  - `users`
+  - `cyber_incidents`
+  - `datasets_metadata`
+  - `it_tickets`
+- Full **CRUD operations** (Create, Read, Update, Delete) for all domains
+- CSV data loading using **pandas**
+- 100% **parameterized queries** – no SQL injection risk
+- Clean modular structure (`app/data/`, `app/services/`)
+- One-command full setup & testing via `main.py`
+
+### Database Schema
+```sql
+users (id, username, password_hash, role)
+cyber_incidents (id, date, incident_type, severity, status, description, reported_by)
+datasets_metadata (id, dataset_name, size_mb, format, description, source, created_date)
+it_tickets (id, date, issue_type, priority, status, description, assigned_to)
